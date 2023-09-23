@@ -33,6 +33,7 @@ public class CustomerController {
 		log.warn("Some warning message");
 		log.debug("Some debug message");
 		
+		System.out.println("Another test");
 		return "Customer Added";
 	}
 	

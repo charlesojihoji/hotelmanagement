@@ -26,6 +26,7 @@ public class HotelServiceImpl implements HotelService{
 			e.printStackTrace();
 		}
 		
+		System.out.println("Test");
 		return null;
 	}
 
