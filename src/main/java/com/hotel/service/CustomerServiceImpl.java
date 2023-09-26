@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hotel.entity.Customer;
-import com.hotel.repository.HotelRepository;
+import com.hotel.repository.CustomerRepository;
 
 @Service
-public class HotelServiceImpl implements HotelService{
+public class CustomerServiceImpl implements CustomerService{
 
 	@Autowired
-	private HotelRepository hotelRepository;
+	private CustomerRepository hotelRepository;
 	
 	@Override
 	public String addCustomer(Customer customer) {

@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -15,13 +16,14 @@ public class Order {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="OrderID")
+	@Column(name="id")
 	private int id;
 	
-	@Column(name="OrderItem")
+	@Column(name="order_item")
 	private String item;
 	
 	@ManyToOne
+	@JoinColumn(name="customer_id")
 	private Customer customerId;
 	
 	public Order() {
@@ -58,5 +60,5 @@ public class Order {
 	public void setCustomerId(Customer customerId) {
 		this.customerId = customerId;
 	}
-	
+
 }
