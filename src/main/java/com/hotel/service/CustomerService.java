@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import com.hotel.entity.Customer;
 
 
-public interface HotelService {
+public interface CustomerService {
 
 	public String addCustomer(Customer customer);
 

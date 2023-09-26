@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hotel.entity.Customer;
-import com.hotel.service.HotelService;
+import com.hotel.service.CustomerService;
 
 @RestController
 @RequestMapping("/customers")
@@ -22,7 +22,7 @@ public class CustomerController {
 	private static Logger log=Logger.getLogger(CustomerController.class);
 	
 	@Autowired
-	private HotelService hotelService;
+	private CustomerService hotelService;
 	
 	@PostMapping
 	public String addCustomer(@RequestBody Customer customer) {
