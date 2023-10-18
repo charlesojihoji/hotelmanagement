@@ -88,4 +88,18 @@ public class OrderServiceImpl implements OrderService{
 		return null;
 	}
 
+	@Override
+	public String deleteOrder(int id) {
+
+		try {
+			orderRepository.deleteById(id);
+			
+			return "Order Deleted";
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 }

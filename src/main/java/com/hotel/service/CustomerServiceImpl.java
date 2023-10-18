@@ -8,12 +8,16 @@ import org.springframework.stereotype.Service;
 
 import com.hotel.entity.Customer;
 import com.hotel.repository.CustomerRepository;
+import com.hotel.repository.OrderRepository;
 
 @Service
 public class CustomerServiceImpl implements CustomerService{
 
 	@Autowired
 	private CustomerRepository hotelRepository;
+	
+	@Autowired
+	private OrderRepository orderRepository;
 	
 	@Override
 	public String addCustomer(Customer customer) {
@@ -67,6 +71,23 @@ public class CustomerServiceImpl implements CustomerService{
 			e.printStackTrace();
 		}
 		
+		return null;
+	}
+
+	@Override
+	public String deleteCustomer(int id) {
+
+		try {
+			
+			Customer customer = hotelRepository.findById(id).get();
+			orderRepository.deleteAllByCustomerId(customer);
+			hotelRepository.deleteById(id);
+			
+			return "Customer Deleted";
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
