@@ -16,4 +16,6 @@ public interface OrderService {
 
 	public List<Order> getCustomerOrders(int id);
 
+	public String deleteOrder(int id);
+
 }

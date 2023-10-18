@@ -3,6 +3,7 @@ package com.hotel.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -61,5 +62,13 @@ public class OrderController {
 		List<Order> orders = orderService.getCustomerOrders(id);
 		
 		return orders;
+	}
+	
+	@DeleteMapping("/{id}")
+	public String deleteOrder(@PathVariable int id) {
+		
+		orderService.deleteOrder(id);
+		
+		return "Order has been deleted";
 	}
 }
